@@ -232,6 +232,11 @@ iso-build:
 	#cat `which ubuntu-defaults-image` | sed 's@lb config@lb config username=username hostname=ros-indigo@' | sed 's@^\(.*lb build.*\)$$@echo \1 > tork-defaults-build@'> tork-defaults-config
 	cat `which ubuntu-defaults-image` | sed 's@^\(.*lb build.*\)$$@echo \1 > tork-defaults-build@'> tork-defaults-config
 	chmod u+x ./tork-defaults-config
+	# install syslniux-thmes xenial for trusty environment
+	wget http://ftp.osuosl.org/pub/ubuntu/pool/main/s/syslinux/isolinux_6.03+dfsg-11ubuntu1_all.deb
+	sudo dpkg -i isolinux_6.03+dfsg-11ubuntu1_all.deb
+	wget http://ftp.osuosl.org/pub/ubuntu/pool/main/s/syslinux-themes-ubuntu/syslinux-themes-ubuntu-xenial_12_amd64.deb
+	sudo dpkg -i syslinux-themes-ubuntu-xenial_12_amd64.deb
 	./tork-defaults-config --release ${RELEASE} --package tork-defaults_0.1_all.deb --components main,restricted,universe,multiverse # --ppa xorg-edgers/ppa
 
 	# add-apt-repository generate fiels in archvies, since lb config cleans config/archives
