@@ -237,6 +237,8 @@ iso-build:
 	sudo dpkg -i isolinux_6.03+dfsg-11ubuntu1_all.deb
 	wget http://ftp.osuosl.org/pub/ubuntu/pool/main/s/syslinux-themes-ubuntu/syslinux-themes-ubuntu-xenial_12_amd64.deb
 	sudo dpkg -i syslinux-themes-ubuntu-xenial_12_amd64.deb
+	sed -i 's@^$$DELETE_APT_LISTS@$$DELETE_APT_LISTS || echo "ok"@' tork-defaults-config
+	cat tork-defaults-config
 	./tork-defaults-config --release ${RELEASE} --package tork-defaults_0.1_all.deb --components main,restricted,universe,multiverse # --ppa xorg-edgers/ppa
 
 	# add-apt-repository generate fiels in archvies, since lb config cleans config/archives
