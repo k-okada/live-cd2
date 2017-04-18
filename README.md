@@ -57,8 +57,13 @@ Burning
      - `sudo add-apt-repository ppa:mkusb/ppa  # and press Enter`
      - `sudo apt-get update`
      - `sudo apt-get install mkusb usb-pack-efi`
-     - `sudo -H mkusb indigo-tork-*.iso p` # source file and persistence via parameters
-     - Choose 80% for persistent space on 8G memory will make 512M free pertition on Windows and 4G persitent disk strage for Ubuntu
+     - `sudo -H mkusb indigo-tork-*.iso` # source file and persistence via parameters
+     - 1. Choose `d:     dus , guidus, mkusb-dus    - New, easy to use`
+     - 2. Choose `p      'Persistent live' - only Debian and Ubuntu`
+     - 3. Choose `sdb    Generic_Flash_Disk`
+     - 4. Choose `upefi  usb-pack-efi    (default grub from ISO file)`
+     - Choose 80% for persistent space on 8G memory will make 1.0G free pertition on Windows and 4.0G persitent disk strage for Ubuntu
+     - https://askubuntu.com/questions/693719/how-to-boot-from-a-usb-drive-in-virtualbox
 
 References:
 - http://github.com/mbentley/overclockix
