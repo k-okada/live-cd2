@@ -6,6 +6,7 @@ ROS_DISTRO=${1:-indigo}
 set -x
 set -e
 
+sudo find binary/
 sudo cp -ar /tmp/iso/${ROS_DISTRO}/EFI/ /tmp/iso/${ROS_DISTRO}/README.diskdefines /tmp/iso/${ROS_DISTRO}/boot/ /tmp/iso/${ROS_DISTRO}/dists/ /tmp/iso/${ROS_DISTRO}/pool/ /tmp/iso/${ROS_DISTRO}/preseed/ ./binary
 sudo ls -al binary/
 sudo cp -a /tmp/iso/${ROS_DISTRO}/.disk/base_installable /tmp/iso/${ROS_DISTRO}/.disk/cd_type ./binary/.disk/

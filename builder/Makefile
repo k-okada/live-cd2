@@ -77,6 +77,7 @@ setup-vagrant:
 	docker -H tcp://:2375 info
 	$(call colorecho, "check if vagrant is available")
 	sshpass -p vagrant ssh -o StrictHostkeyChecking=no -p 22 ${VAGRANT_USERNAME}@${VAGRANT_HOSTNAME} ls -al
+	sshpass -p vagrant ssh -o StrictHostkeyChecking=no -p 22 ${VAGRANT_USERNAME}@${VAGRANT_HOSTNAME} find /tmp/iso
 	$(call colorecho, "docker info on vagrant machine")
 	sshpass -p vagrant ssh -o StrictHostkeyChecking=no -p 22 ${VAGRANT_USERNAME}@${VAGRANT_HOSTNAME} docker info
 	$(call colorecho, "docker images on vagrant machine")
